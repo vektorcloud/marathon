@@ -1,36 +1,48 @@
-FROM ubuntu:latest
+FROM quay.io/vektorcloud/mesos:1.3.0-jni AS mesos
 
-RUN apt-get update && \
-  apt-get install -yyq wget \
-  openjdk-8-jre \
+FROM quay.io/vektorcloud/scala AS marathon
+
+ENV VERSION v1.4.5
+
+RUN cd /tmp \
+  && apk add --no-cache git \
+  && git clone https://github.com/mesosphere/marathon.git \
+  && cd marathon \
+  && git checkout "$VERSION" \
+  && sbt 'universal:packageBin'
+
+# TODO: SHOULD be able to run this with our
+# glibc + openjdk image but Marathon depends
+# a Scala lib called Kamon which in turn
+# depends on some other c lib called sigar.
+# Alpine has a Sigar library but it doesn't 
+# seem to work. 
+# It sounds like you can also disable https://github.com/kamon-io/Kamon/issues/234
+# Sigar but it's really beyond me at this point. 
+# There is a relevant stack trace that is produced in ./trace.log
+
+FROM frolvlad/alpine-oraclejdk8:slim
+
+RUN apk add --no-cache \
+  bash \
+  binutils \
+  coreutils \
   curl \
+  fts \
+  libstdc++ \
+  openssl \
   subversion \
-  libcurlpp-dev \
-  openssl && \
-  wget "https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb" -O /tmp/dumb_init.deb && \
-  dpkg --install /tmp/dumb_init.deb && \
-  rm /tmp/dumb* && \
-  apt-get clean && \
-  rm -rf /var/lib/apt/lists/*
+  tar 
 
-# Mesos
-RUN VERSION="1.1.x" && \
-  PACKAGE="mesos-$VERSION-glibc.tar.gz" && \
-  wget "https://github.com/vektorlab/mesos-packaging/releases/download/$VERSION/$PACKAGE" -O "/tmp/$PACKAGE" && \
-  wget "https://github.com/vektorlab/mesos-packaging/releases/download/$VERSION/$PACKAGE.md5" -O "/tmp/$PACKAGE.md5" && \
-  cd /tmp && \
-  md5sum -c "$PACKAGE.md5" && \
-  mkdir /tmp/mesos && \
-  tar xvf "/tmp/$PACKAGE" -C / && \
-  rm -rvf /tmp/*
+COPY --from=mesos /usr/local/lib/libmesos-1.3.0.so /usr/lib
+COPY --from=marathon /tmp/marathon/target/universal/ /tmp/
 
-# Marathon
-RUN VERSION="1.3.5" && \
-  wget http://downloads.mesosphere.com/marathon/v$VERSION/marathon-$VERSION.tgz -O /tmp/marathon.tgz && \
-  tar xvf /tmp/marathon.tgz -C /opt && \
-  ln -sv /opt/marathon-* /opt/marathon && \
-  rm -v /tmp/*
+RUN mkdir /opt \
+  && unzip -d /opt /tmp/marathon-*.zip \
+  && ln -sv /opt/marathon-* /opt/marathon \
+  && rm -rf /tmp/*
 
-ENV MARATHON_MASTER="zk://localhost:2181/mesos"
+ENV MESOS_NATIVE_JAVA_LIBRARY=/usr/lib/libmesos-1.3.0.so \
+  PATH=$PATH:/opt/marathon/bin
 
-ENTRYPOINT ["/usr/bin/dumb-init", "/opt/marathon/bin/start"]
+ENTRYPOINT ["/opt/marathon/bin/marathon"]

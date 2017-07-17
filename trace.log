@@ -1,0 +1,732 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x0000000000009fae, pid=456, tid=0x00007f013b6b8ae8
+#
+# JRE version: OpenJDK Runtime Environment (8.0_131-b11) (build 1.8.0_131-b11)
+# Java VM: OpenJDK 64-Bit Server VM (25.131-b11 mixed mode linux-amd64 compressed oops)
+# Derivative: IcedTea 3.4.0
+# Distribution: Custom build (Fri Jun 16 13:41:54 GMT 2017)
+# Problematic frame:
+# C  0x0000000000009fae
+#
+# Core dump written. Default location: /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/core or core.456
+#
+# If you would like to submit a bug report, please include
+# instructions on how to reproduce the bug and visit:
+#   http://icedtea.classpath.org/bugzilla
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000563bc5871800):  JavaThread "kamon-kamon.system-metrics.sigar-dispatcher-8" [_thread_in_native, id=530, stack(0x00007f013b5b8000,0x00007f013b6b8aa8)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x0000000000009fae
+
+Registers:
+RAX=0x0000000000000000, RBX=0x00007f013b6b5a08, RCX=0x00007f015e200370, RDX=0x0000000000000000
+RSP=0x00007f013b6b59f8, RBP=0x00007f013b6b5a10, RSI=0x00007f013b6b5a08, RDI=0x00007f013b6b5a10
+R8 =0x0000000000000000, R9 =0x0000000000000000, R10=0x0000000000000000, R11=0x0000000000000246
+R12=0x00007f013b6b7a30, R13=0x00007f013ba07830, R14=0x00007f013b6b7ae0, R15=0x0000563bc5871800
+RIP=0x0000000000009fae, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000014
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f013b6b59f8)
+0x00007f013b6b59f8:   00007f013bb96972 0000563bc1adf0a0
+0x00007f013b6b5a08:   00007f013b6b5a10 392e302039352e31
+0x00007f013b6b5a18:   352033372e302030 343435203737372f
+0x00007f013b6b5a28:   e2db7677b155000a 0000563bc5871800
+0x00007f013b6b5a38:   0000563bc5871800 00007f013b6b5ab8
+0x00007f013b6b5a48:   00007f013b6b5b30 0000563bc58719e0
+0x00007f013b6b5a58:   00007f013b6b5bb0 0000563bc61bb920
+0x00007f013b6b5a68:   00007f015d6e611d 00007f013b6b5bb0
+0x00007f013b6b5a78:   00007f015d57f8e2 0000563bc5871800
+0x00007f013b6b5a88:   00007f015d6e6138 0000563bc3234de0
+0x00007f013b6b5a98:   000003d9c58719e0 0000563bc61bb920
+0x00007f013b6b5aa8:   00007f015e1cdb29 0000000000000400
+0x00007f013b6b5ab8:   000000000000001f 00007f015e433cd4
+0x00007f013b6b5ac8:   e2db767700000000 00000000000003d9
+0x00007f013b6b5ad8:   00000000000003d9 0000563bc3234de0
+0x00007f013b6b5ae8:   00007f0135ab52c8 00007f013b6b5bb0
+0x00007f013b6b5af8:   0000563bc58719e0 0000563bc61bb920
+0x00007f013b6b5b08:   00007f015c8ec503 00007f013b6b5b00
+0x00007f013b6b5b18:   00007f013b6b6010 00007f013b6b6038
+0x00007f013b6b5b28:   00007f013b6b5bb0 79732f6e6f6d616b
+0x00007f013b6b5b38:   6769732f6d657473 4164616f35ab52a8
+0x00007f013b6b5b48:   654d656761726576 6124247363697274
+0x00007f013b6b5b58:   32246e75666e6f6e 00007f013b6b5b00
+0x00007f013b6b5b68:   00007f013b6b5bd0 0000563bc5871800
+0x00007f013b6b5b78:   00007f015d69abe6 00007f013b6b5c00
+0x00007f013b6b5b88:   0000000771972498 00007f013b6b5bf0
+0x00007f013b6b5b98:   0000563b3b2bd408 00007f0135ab5288
+0x00007f013b6b5ba8:   00007f013b6b59d0 61742f3a656c6966
+0x00007f013b6b5bb8:   72616d2f74656772 2e312d6e6f687461
+0x00007f013b6b5bc8:   50414e532d302e35 3635362d544f4853
+0x00007f013b6b5bd8:   393037633666672d 6f692f62696c2f63
+0x00007f013b6b5be8:   6b2e6e6f6d616b2e 7379732d6e6f6d61 
+
+Instructions: (pc=0x0000000000009fae)
+0x0000000000009f8e:   
+[error occurred during error reporting (printing registers, top of stack, instructions near pc), id 0xb]
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x00007f013b6b5a08 is pointing into the stack for thread: 0x0000563bc5871800
+RCX=0x00007f015e200370: close+0x9 in /lib/ld-musl-x86_64.so.1 at 0x00007f015e1aa000
+RDX=0x0000000000000000 is an unknown value
+RSP=0x00007f013b6b59f8 is pointing into the stack for thread: 0x0000563bc5871800
+RBP=0x00007f013b6b5a10 is pointing into the stack for thread: 0x0000563bc5871800
+RSI=0x00007f013b6b5a08 is pointing into the stack for thread: 0x0000563bc5871800
+RDI=0x00007f013b6b5a10 is pointing into the stack for thread: 0x0000563bc5871800
+R8 =0x0000000000000000 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x0000000000000000 is an unknown value
+R11=0x0000000000000246 is an unknown value
+R12=0x00007f013b6b7a30 is pointing into the stack for thread: 0x0000563bc5871800
+R13=0x00007f013ba07830 is pointing into metadata
+R14=0x00007f013b6b7ae0 is pointing into the stack for thread: 0x0000563bc5871800
+R15=0x0000563bc5871800 is a thread
+
+
+Stack: [0x00007f013b5b8000,0x00007f013b6b8aa8],  sp=0x00007f013b6b59f8,  free space=1014k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x0000000000009fae
+C  0x352033372e302030
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  org.hyperic.sigar.Sigar.getLoadAverage()[D+0
+j  kamon.system.sigar.LoadAverageMetrics$$anonfun$1.apply()[D+7
+j  kamon.system.sigar.LoadAverageMetrics$$anonfun$1.apply()Ljava/lang/Object;+1
+j  kamon.system.sigar.SigarSafeRunner$.runSafe(Lscala/Function0;Lscala/Function0;Ljava/lang/String;Lakka/event/LoggingAdapter;)Ljava/lang/Object;+1
+j  kamon.system.sigar.LoadAverageMetrics.update()V+25
+j  kamon.system.sigar.SigarMetricsUpdater$$anonfun$updateMetrics$1.apply(Lkamon/system/sigar/SigarMetric;)V+1
+j  kamon.system.sigar.SigarMetricsUpdater$$anonfun$updateMetrics$1.apply(Ljava/lang/Object;)Ljava/lang/Object;+5
+J 1996 C1 scala.collection.immutable.List.foreach(Lscala/Function1;)V (32 bytes) @ 0x00007f014dc675c4 [0x00007f014dc67400+0x1c4]
+j  kamon.system.sigar.SigarMetricsUpdater.updateMetrics()V+12
+j  kamon.system.sigar.SigarMetricsUpdater$$anonfun$receive$1.applyOrElse(Ljava/lang/Object;Lscala/Function1;)Ljava/lang/Object;+16
+j  akka.actor.Actor$class.aroundReceive(Lakka/actor/Actor;Lscala/PartialFunction;Ljava/lang/Object;)V+8
+j  kamon.system.sigar.SigarMetricsUpdater.aroundReceive(Lscala/PartialFunction;Ljava/lang/Object;)V+3
+j  akka.actor.ActorCell.receiveMessage(Ljava/lang/Object;)V+15
+j  akka.actor.ActorCell.invoke_aroundBody2(Lakka/actor/ActorCell;Lakka/dispatch/Envelope;Lorg/aspectj/lang/JoinPoint;)V+59
+j  akka.actor.ActorCell$AjcClosure3.run([Ljava/lang/Object;)Ljava/lang/Object;+23
+j  org.aspectj.runtime.reflect.JoinPointImpl.proceed([Ljava/lang/Object;)Ljava/lang/Object;+329
+j  akka.dispatch.WeaveActorReceive$$anonfun$contextInvoke$1.apply()Ljava/lang/Object;+18
+j  mesosphere.marathon.core.async.package$.propagateContext(Lscala/collection/immutable/Map;Lscala/Option;Lscala/Function0;)Ljava/lang/Object;+46
+j  akka.dispatch.WeaveActorReceive.contextInvoke(Lorg/aspectj/lang/ProceedingJoinPoint;Lakka/dispatch/Envelope;)Ljava/lang/Object;+106
+j  akka.actor.ActorCell.invoke(Lakka/dispatch/Envelope;)V+58
+j  akka.dispatch.Mailbox.processMailbox(IJ)V+24
+j  akka.dispatch.Mailbox.run()V+20
+j  java.util.concurrent.ThreadPoolExecutor.runWorker(Ljava/util/concurrent/ThreadPoolExecutor$Worker;)V+95
+j  java.util.concurrent.ThreadPoolExecutor$Worker.run()V+5
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000563bc540f800 JavaThread "JMX exporting thread-EventThread" daemon [_thread_blocked, id=543, stack(0x00007f0136087000,0x00007f0136187a80)]
+  0x0000563bc5fac000 JavaThread "JMX exporting thread-SendThread(localhost.localdomain:2181)" daemon [_thread_in_Java, id=542, stack(0x00007f0136188000,0x00007f0136288a80)]
+  0x0000563bc63a5000 JavaThread "Curator-ConnectionStateManager-0" daemon [_thread_blocked, id=541, stack(0x00007f0136289000,0x00007f0136389a80)]
+  0x0000563bc3efc000 JavaThread "com.google.inject.internal.util.$Finalizer" daemon [_thread_blocked, id=540, stack(0x00007f013638a000,0x00007f013648aa80)]
+  0x0000563bc52ac000 JavaThread "marathon-akka.actor.default-dispatcher-5" [_thread_blocked, id=539, stack(0x00007f013aaaf000,0x00007f013abafaa8)]
+  0x0000563bc5f23800 JavaThread "marathon-akka.actor.default-dispatcher-3" [_thread_blocked, id=538, stack(0x00007f013abb0000,0x00007f013acb0aa8)]
+  0x0000563bc5f21800 JavaThread "marathon-akka.actor.default-dispatcher-4" [_thread_blocked, id=537, stack(0x00007f013acb1000,0x00007f013adb1aa8)]
+  0x0000563bc5f20800 JavaThread "marathon-akka.actor.default-dispatcher-2" [_thread_blocked, id=536, stack(0x00007f013adb2000,0x00007f013aeb2aa8)]
+  0x0000563bc59ff000 JavaThread "marathon-scheduler-1" [_thread_blocked, id=535, stack(0x00007f013aeb3000,0x00007f013afb3aa8)]
+  0x0000563bc5428000 JavaThread "kamon-akka.actor.default-dispatcher-12" [_thread_blocked, id=534, stack(0x00007f013afb4000,0x00007f013b0b4aa8)]
+  0x0000563bc4efa000 JavaThread "kamon-akka.actor.default-dispatcher-11" [_thread_blocked, id=533, stack(0x00007f013b0b5000,0x00007f013b1b5aa8)]
+  0x0000563bc329c800 JavaThread "kamon-akka.actor.default-dispatcher-10" [_thread_blocked, id=532, stack(0x00007f013b1b6000,0x00007f013b2b6aa8)]
+  0x0000563bc54a7800 JavaThread "kamon-kamon.system-metrics.context-switches-dispatcher-9" [_thread_blocked, id=531, stack(0x00007f013b4b7000,0x00007f013b5b7aa8)]
+=>0x0000563bc5871800 JavaThread "kamon-kamon.system-metrics.sigar-dispatcher-8" [_thread_in_native, id=530, stack(0x00007f013b5b8000,0x00007f013b6b8aa8)]
+  0x0000563bc5bbd800 JavaThread "kamon-akka.io.pinned-dispatcher-7" [_thread_in_native, id=529, stack(0x00007f013d2e0000,0x00007f013d3e0aa8)]
+  0x0000563bc5b45800 JavaThread "kamon-akka.actor.default-dispatcher-6" [_thread_blocked, id=528, stack(0x00007f013c6bc000,0x00007f013c7bcaa8)]
+  0x0000563bc52d8000 JavaThread "kamon-akka.actor.default-dispatcher-5" [_thread_blocked, id=527, stack(0x00007f013ce99000,0x00007f013cf99aa8)]
+  0x0000563bc4f33800 JavaThread "kamon-akka.actor.default-dispatcher-4" [_thread_blocked, id=526, stack(0x00007f013bdc4000,0x00007f013bec4aa8)]
+  0x0000563bc4879800 JavaThread "kamon-akka.actor.default-dispatcher-3" [_thread_blocked, id=525, stack(0x00007f013c2cb000,0x00007f013c3cbaa8)]
+  0x0000563bc3d8e800 JavaThread "kamon-akka.actor.default-dispatcher-2" [_thread_blocked, id=524, stack(0x00007f013ca00000,0x00007f013cb00aa8)]
+  0x0000563bc4864800 JavaThread "kamon-scheduler-1" [_thread_blocked, id=523, stack(0x00007f013bcb1000,0x00007f013bdb1aa8)]
+  0x0000563bc3f53000 JavaThread "Attach Listener" daemon [_thread_blocked, id=522, stack(0x00007f013cb01000,0x00007f013cc01aa8)]
+  0x0000563bc27e1000 JavaThread "AsyncAppender-Worker-async" daemon [_thread_blocked, id=521, stack(0x00007f0141480000,0x00007f0141580aa8)]
+  0x0000563bc1c8f000 JavaThread "Service Thread" daemon [_thread_blocked, id=519, stack(0x00007f0141c21000,0x00007f0141d21aa8)]
+  0x0000563bc1c6a800 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=518, stack(0x00007f0141d23000,0x00007f0141e23aa8)]
+  0x0000563bc1c5b000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=517, stack(0x00007f0141e25000,0x00007f0141f25aa8)]
+  0x0000563bc1c58000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=516, stack(0x00007f0141f27000,0x00007f0142027aa8)]
+  0x0000563bc1c55800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=515, stack(0x00007f0142028000,0x00007f0142128aa8)]
+  0x0000563bc1c26000 JavaThread "Finalizer" daemon [_thread_blocked, id=514, stack(0x00007f0142129000,0x00007f0142229aa8)]
+  0x0000563bc1c23000 JavaThread "Reference Handler" daemon [_thread_blocked, id=513, stack(0x00007f014222a000,0x00007f014232aaa8)]
+  0x0000563bc1ad2000 JavaThread "JMX exporting thread" [_thread_in_vm, id=507, stack(0x00007f015e331000,0x00007f015e431aa8)]
+
+Other Threads:
+  0x0000563bc1c19000 VMThread [stack: 0x00007f014232c000,0x00007f014242caa8] [id=512]
+  0x0000563bc1c78800 WatcherThread [stack: 0x00007f0141b20000,0x00007f0141c20aa8] [id=520]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0000563bc1ad0ac0] Threads_lock - owner thread: 0x0000563bc1ad2000
+
+Heap:
+ PSYoungGen      total 152576K, used 91387K [0x000000076d000000, 0x000000077bf00000, 0x00000007c0000000)
+  eden space 136704K, 55% used [0x000000076d000000,0x00000007719c2440,0x0000000775580000)
+  from space 15872K, 99% used [0x0000000775580000,0x00000007764fcb00,0x0000000776500000)
+  to   space 20480K, 0% used [0x000000077ab00000,0x000000077ab00000,0x000000077bf00000)
+ ParOldGen       total 167936K, used 22902K [0x00000006c7000000, 0x00000006d1400000, 0x000000076d000000)
+  object space 167936K, 13% used [0x00000006c7000000,0x00000006c865da18,0x00000006d1400000)
+ Metaspace       used 44435K, capacity 44644K, committed 45096K, reserved 1087488K
+  class space    used 6008K, capacity 6062K, committed 6184K, reserved 1048576K
+
+Card table byte_map: [0x00007f014cb4d000,0x00007f014d316000] byte_map_base: 0x00007f0149515000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f015dd68f00
+ Begin Bits: [0x00007f0144595000, 0x00007f01483d5000)
+ End Bits:   [0x00007f01483d5000, 0x00007f014c215000)
+
+Polling page: 0x00007f015e32f000
+
+CodeCache: size=245760Kb used=12117Kb max_used=13467Kb free=233642Kb
+ bounds [0x00007f014d6d6000, 0x00007f014e416000, 0x00007f015c6d6000]
+ total_blobs=4571 nmethods=4092 adapters=390
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 5.642 Thread 0x0000563bc1c6a800 4554       2       java.util.regex.Pattern$Start::match (90 bytes)
+Event: 5.642 Thread 0x0000563bc1c6a800 nmethod 4554 0x00007f014d927a90 code [0x00007f014d927c20, 0x00007f014d927ee8]
+Event: 5.644 Thread 0x0000563bc1c6a800 4555       2       java.util.concurrent.locks.AbstractOwnableSynchronizer::setExclusiveOwnerThread (6 bytes)
+Event: 5.645 Thread 0x0000563bc1c6a800 nmethod 4555 0x00007f014da2ae90 code [0x00007f014da2afe0, 0x00007f014da2b150]
+Event: 5.658 Thread 0x0000563bc1c6a800 4557       2       akka.actor.LightArrayRevolverScheduler$$anon$4::checkQueue (174 bytes)
+Event: 5.659 Thread 0x0000563bc1c6a800 nmethod 4557 0x00007f014d83ce90 code [0x00007f014d83d040, 0x00007f014d83d4f8]
+Event: 5.659 Thread 0x0000563bc1c6a800 4558   !   2       akka.actor.LightArrayRevolverScheduler::waitNanos (50 bytes)
+Event: 5.659 Thread 0x0000563bc1c6a800 nmethod 4558 0x00007f014d811e10 code [0x00007f014d811fa0, 0x00007f014d8121f8]
+Event: 5.696 Thread 0x0000563bc1c6a800 4559       2       java.util.regex.Pattern$Branch::match (66 bytes)
+Event: 5.696 Thread 0x0000563bc1c6a800 nmethod 4559 0x00007f014d818b50 code [0x00007f014d818ce0, 0x00007f014d818fb8]
+
+GC Heap History (10 events):
+Event: 2.643 GC heap before
+{Heap before GC invocations=5 (full 1):
+ PSYoungGen      total 74752K, used 64512K [0x000000076d000000, 0x0000000776200000, 0x00000007c0000000)
+  eden space 64512K, 100% used [0x000000076d000000,0x0000000770f00000,0x0000000770f00000)
+  from space 10240K, 0% used [0x0000000770f00000,0x0000000770f00000,0x0000000771900000)
+  to   space 10240K, 0% used [0x0000000775800000,0x0000000775800000,0x0000000776200000)
+ ParOldGen       total 104960K, used 5912K [0x00000006c7000000, 0x00000006cd680000, 0x000000076d000000)
+  object space 104960K, 5% used [0x00000006c7000000,0x00000006c75c6130,0x00000006cd680000)
+ Metaspace       used 28320K, capacity 28484K, committed 28720K, reserved 1073152K
+  class space    used 4024K, capacity 4098K, committed 4144K, reserved 1048576K
+Event: 2.654 GC heap after
+Heap after GC invocations=5 (full 1):
+ PSYoungGen      total 102400K, used 8710K [0x000000076d000000, 0x0000000776100000, 0x00000007c0000000)
+  eden space 93184K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000772b00000)
+  from space 9216K, 94% used [0x0000000775800000,0x0000000776081bc0,0x0000000776100000)
+  to   space 10240K, 0% used [0x0000000774d00000,0x0000000774d00000,0x0000000775700000)
+ ParOldGen       total 104960K, used 5920K [0x00000006c7000000, 0x00000006cd680000, 0x000000076d000000)
+  object space 104960K, 5% used [0x00000006c7000000,0x00000006c75c8130,0x00000006cd680000)
+ Metaspace       used 28320K, capacity 28484K, committed 28720K, reserved 1073152K
+  class space    used 4024K, capacity 4098K, committed 4144K, reserved 1048576K
+}
+Event: 3.766 GC heap before
+{Heap before GC invocations=6 (full 1):
+ PSYoungGen      total 102400K, used 101894K [0x000000076d000000, 0x0000000776100000, 0x00000007c0000000)
+  eden space 93184K, 100% used [0x000000076d000000,0x0000000772b00000,0x0000000772b00000)
+  from space 9216K, 94% used [0x0000000775800000,0x0000000776081bc0,0x0000000776100000)
+  to   space 10240K, 0% used [0x0000000774d00000,0x0000000774d00000,0x0000000775700000)
+ ParOldGen       total 104960K, used 5920K [0x00000006c7000000, 0x00000006cd680000, 0x000000076d000000)
+  object space 104960K, 5% used [0x00000006c7000000,0x00000006c75c8130,0x00000006cd680000)
+ Metaspace       used 33940K, capacity 34116K, committed 34224K, reserved 1079296K
+  class space    used 4675K, capacity 4738K, committed 4784K, reserved 1048576K
+Event: 3.798 GC heap after
+Heap after GC invocations=6 (full 1):
+ PSYoungGen      total 138240K, used 10239K [0x000000076d000000, 0x0000000777380000, 0x00000007c0000000)
+  eden space 128000K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000774d00000)
+  from space 10240K, 99% used [0x0000000774d00000,0x00000007756ffd20,0x0000000775700000)
+  to   space 14848K, 0% used [0x0000000776500000,0x0000000776500000,0x0000000777380000)
+ ParOldGen       total 104960K, used 10889K [0x00000006c7000000, 0x00000006cd680000, 0x000000076d000000)
+  object space 104960K, 10% used [0x00000006c7000000,0x00000006c7aa2578,0x00000006cd680000)
+ Metaspace       used 33940K, capacity 34116K, committed 34224K, reserved 1079296K
+  class space    used 4675K, capacity 4738K, committed 4784K, reserved 1048576K
+}
+Event: 3.978 GC heap before
+{Heap before GC invocations=7 (full 1):
+ PSYoungGen      total 138240K, used 35246K [0x000000076d000000, 0x0000000777380000, 0x00000007c0000000)
+  eden space 128000K, 19% used [0x000000076d000000,0x000000076e86bc20,0x0000000774d00000)
+  from space 10240K, 99% used [0x0000000774d00000,0x00000007756ffd20,0x0000000775700000)
+  to   space 14848K, 0% used [0x0000000776500000,0x0000000776500000,0x0000000777380000)
+ ParOldGen       total 104960K, used 10889K [0x00000006c7000000, 0x00000006cd680000, 0x000000076d000000)
+  object space 104960K, 10% used [0x00000006c7000000,0x00000006c7aa2578,0x00000006cd680000)
+ Metaspace       used 35163K, capacity 35332K, committed 35496K, reserved 1079296K
+  class space    used 4849K, capacity 4930K, committed 5032K, reserved 1048576K
+Event: 3.989 GC heap after
+Heap after GC invocations=7 (full 1):
+ PSYoungGen      total 151552K, used 12500K [0x000000076d000000, 0x000000077b280000, 0x00000007c0000000)
+  eden space 136704K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000775580000)
+  from space 14848K, 84% used [0x0000000776500000,0x00000007771353a8,0x0000000777380000)
+  to   space 15872K, 0% used [0x0000000775580000,0x0000000775580000,0x0000000776500000)
+ ParOldGen       total 104960K, used 10905K [0x00000006c7000000, 0x00000006cd680000, 0x000000076d000000)
+  object space 104960K, 10% used [0x00000006c7000000,0x00000006c7aa6578,0x00000006cd680000)
+ Metaspace       used 35163K, capacity 35332K, committed 35496K, reserved 1079296K
+  class space    used 4849K, capacity 4930K, committed 5032K, reserved 1048576K
+}
+Event: 3.989 GC heap before
+{Heap before GC invocations=8 (full 2):
+ PSYoungGen      total 151552K, used 12500K [0x000000076d000000, 0x000000077b280000, 0x00000007c0000000)
+  eden space 136704K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000775580000)
+  from space 14848K, 84% used [0x0000000776500000,0x00000007771353a8,0x0000000777380000)
+  to   space 15872K, 0% used [0x0000000775580000,0x0000000775580000,0x0000000776500000)
+ ParOldGen       total 104960K, used 10905K [0x00000006c7000000, 0x00000006cd680000, 0x000000076d000000)
+  object space 104960K, 10% used [0x00000006c7000000,0x00000006c7aa6578,0x00000006cd680000)
+ Metaspace       used 35163K, capacity 35332K, committed 35496K, reserved 1079296K
+  class space    used 4849K, capacity 4930K, committed 5032K, reserved 1048576K
+Event: 4.063 GC heap after
+Heap after GC invocations=8 (full 2):
+ PSYoungGen      total 151552K, used 0K [0x000000076d000000, 0x000000077b280000, 0x00000007c0000000)
+  eden space 136704K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000775580000)
+  from space 14848K, 0% used [0x0000000776500000,0x0000000776500000,0x0000000777380000)
+  to   space 15872K, 0% used [0x0000000775580000,0x0000000775580000,0x0000000776500000)
+ ParOldGen       total 167936K, used 17962K [0x00000006c7000000, 0x00000006d1400000, 0x000000076d000000)
+  object space 167936K, 10% used [0x00000006c7000000,0x00000006c818ab88,0x00000006d1400000)
+ Metaspace       used 35163K, capacity 35332K, committed 35496K, reserved 1079296K
+  class space    used 4849K, capacity 4930K, committed 5032K, reserved 1048576K
+}
+Event: 5.188 GC heap before
+{Heap before GC invocations=9 (full 2):
+ PSYoungGen      total 151552K, used 136704K [0x000000076d000000, 0x000000077b280000, 0x00000007c0000000)
+  eden space 136704K, 100% used [0x000000076d000000,0x0000000775580000,0x0000000775580000)
+  from space 14848K, 0% used [0x0000000776500000,0x0000000776500000,0x0000000777380000)
+  to   space 15872K, 0% used [0x0000000775580000,0x0000000775580000,0x0000000776500000)
+ ParOldGen       total 167936K, used 17962K [0x00000006c7000000, 0x00000006d1400000, 0x000000076d000000)
+  object space 167936K, 10% used [0x00000006c7000000,0x00000006c818ab88,0x00000006d1400000)
+ Metaspace       used 40940K, capacity 41122K, committed 41256K, reserved 1085440K
+  class space    used 5583K, capacity 5639K, committed 5672K, reserved 1048576K
+Event: 5.206 GC heap after
+Heap after GC invocations=9 (full 2):
+ PSYoungGen      total 152576K, used 15858K [0x000000076d000000, 0x000000077bf00000, 0x00000007c0000000)
+  eden space 136704K, 0% used [0x000000076d000000,0x000000076d000000,0x0000000775580000)
+  from space 15872K, 99% used [0x0000000775580000,0x00000007764fcb00,0x0000000776500000)
+  to   space 20480K, 0% used [0x000000077ab00000,0x000000077ab00000,0x000000077bf00000)
+ ParOldGen       total 167936K, used 22902K [0x00000006c7000000, 0x00000006d1400000, 0x000000076d000000)
+  object space 167936K, 13% used [0x00000006c7000000,0x00000006c865da18,0x00000006d1400000)
+ Metaspace       used 40940K, capacity 41122K, committed 41256K, reserved 1085440K
+  class space    used 5583K, capacity 5639K, committed 5672K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 4.633 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014e1008d8 method=org.aspectj.weaver.World$TypeMap.get(Ljava/lang/String;)Lorg/aspectj/weaver/ResolvedType; @ 52
+Event: 4.634 Thread 0x0000563bc1ad2000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f014e0c2dc8 method=org.aspectj.weaver.patterns.SignaturePattern.matches(Lorg/aspectj/weaver/Member;Lorg/aspectj/weaver/World;Z)Z @ 103
+Event: 4.637 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014e1008d8 method=org.aspectj.weaver.World$TypeMap.get(Ljava/lang/String;)Lorg/aspectj/weaver/ResolvedType; @ 52
+Event: 4.637 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014e1008d8 method=org.aspectj.weaver.World$TypeMap.get(Ljava/lang/String;)Lorg/aspectj/weaver/ResolvedType; @ 52
+Event: 4.638 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014e1ac3c0 method=org.aspectj.weaver.ReferenceType.isAssignableFrom(Lorg/aspectj/weaver/ResolvedType;Z)Z @ 1
+Event: 4.638 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014e1ac3c0 method=org.aspectj.weaver.ReferenceType.isAssignableFrom(Lorg/aspectj/weaver/ResolvedType;Z)Z @ 1
+Event: 4.639 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014e1008d8 method=org.aspectj.weaver.World$TypeMap.get(Ljava/lang/String;)Lorg/aspectj/weaver/ResolvedType; @ 52
+Event: 4.793 Thread 0x0000563bc5428000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f014e2f8560 method=scala.concurrent.forkjoin.ForkJoinPool.scan(Lscala/concurrent/forkjoin/ForkJoinPool$WorkQueue;)Lscala/concurrent/forkjoin/ForkJoinTask; @ 312
+Event: 4.835 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014df4877c method=java.io.BufferedInputStream.read1([BII)I @ 39
+Event: 5.129 Thread 0x0000563bc1ad2000 Uncommon trap: reason=class_check action=maybe_recompile pc=0x00007f014df4877c method=java.io.BufferedInputStream.read1([BII)I @ 39
+
+Internal exceptions (10 events):
+Event: 3.734 Thread 0x0000563bc1ad2000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007727e2c68) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 613]
+Event: 3.734 Thread 0x0000563bc1ad2000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007727e9360) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 613]
+Event: 3.734 Thread 0x0000563bc1ad2000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007727e9780) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 613]
+Event: 3.734 Thread 0x0000563bc1ad2000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x00000007727e9ba0) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 613]
+Event: 3.807 Thread 0x0000563bc3d8e800 Implicit null exception at 0x00007f014dff54d4 to 0x00007f014dff614d
+Event: 3.810 Thread 0x0000563bc3d8e800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d22a378) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 613]
+Event: 3.810 Thread 0x0000563bc3d8e800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076d22f478) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 613]
+Event: 3.892 Thread 0x0000563bc4879800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException'> (0x000000076db991b8) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/runtime/sharedRuntime.cpp, line 613]
+Event: 5.693 Thread 0x0000563bc5871800 Exception <a 'org/hyperic/sigar/SigarException': No such device or address> (0x00000007718b9df0) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 735]
+Event: 5.695 Thread 0x0000563bc5871800 Exception <a 'org/hyperic/sigar/SigarException': No such device or address> (0x0000000771907868) thrown at [/home/buildozer/aports/community/openjdk8/src/icedtea-3.4.0/openjdk/hotspot/src/share/vm/prims/jni.cpp, line 735]
+
+Events (10 events):
+Event: 5.696 loading class sun/nio/ch/ExtendedSocketOption done
+Event: 5.696 loading class sun/nio/ch/ExtendedSocketOption$1
+Event: 5.696 loading class kamon/system/sigar/LoadAverageMetrics$$anonfun$2
+Event: 5.696 loading class kamon/system/sigar/LoadAverageMetrics$$anonfun$2 done
+Event: 5.696 loading class sun/nio/ch/ExtendedSocketOption$1 done
+Event: 5.696 Thread 0x0000563bc1c6a800 flushing nmethod 0x00007f014d7e2a10
+Event: 5.696 loading class sun/net/ExtendedOptionsImpl
+Event: 5.696 Thread 0x0000563bc1c6a800 flushing nmethod 0x00007f014d7f4f10
+Event: 5.697 Thread 0x0000563bc1c6a800 flushing nmethod 0x00007f014d841350
+Event: 5.697 loading class sun/net/ExtendedOptionsImpl done
+
+
+Dynamic libraries:
+6c7000000-6d1400000 rw-p 00000000 00:00 0 
+6d1400000-76d000000 ---p 00000000 00:00 0 
+76d000000-77bf00000 rw-p 00000000 00:00 0 
+77bf00000-7c0000000 ---p 00000000 00:00 0 
+7c0000000-7c060a000 rw-p 00000000 00:00 0 
+7c060a000-800000000 ---p 00000000 00:00 0 
+563bc0bd5000-563bc0bd6000 r-xp 00000000 fe:00 21239869                   /usr/lib/jvm/java-1.8-openjdk/bin/java
+563bc0dd5000-563bc0dd6000 r--p 00000000 fe:00 21239869                   /usr/lib/jvm/java-1.8-openjdk/bin/java
+563bc0dd6000-563bc0dd7000 rw-p 00001000 fe:00 21239869                   /usr/lib/jvm/java-1.8-openjdk/bin/java
+563bc1ab3000-563bc6a4d000 rw-p 00000000 00:00 0                          [heap]
+7f0135903000-7f0135b03000 rw-p 00000000 00:00 0 
+7f0135b03000-7f0135d03000 rw-p 00000000 00:00 0 
+7f0135ecc000-7f0136087000 rw-p 00000000 00:00 0 
+7f0136087000-7f013608a000 ---p 00000000 00:00 0 
+7f013608a000-7f0136188000 rw-p 00000000 00:00 0 
+7f0136188000-7f013618b000 ---p 00000000 00:00 0 
+7f013618b000-7f0136289000 rw-p 00000000 00:00 0 
+7f0136289000-7f013628c000 ---p 00000000 00:00 0 
+7f013628c000-7f013638a000 rw-p 00000000 00:00 0 
+7f013638a000-7f013638d000 ---p 00000000 00:00 0 
+7f013638d000-7f013648b000 rw-p 00000000 00:00 0 
+7f013648b000-7f013668d000 r-xp 00000000 fe:00 11549468                   /lib/libuuid.so.1.3.0
+7f013668d000-7f013668e000 r--p 00002000 fe:00 11549468                   /lib/libuuid.so.1.3.0
+7f013668e000-7f013668f000 rw-p 00003000 fe:00 11549468                   /lib/libuuid.so.1.3.0
+7f013668f000-7f0136a0e000 r-xp 00000000 fe:00 30418506                   /lib/libcrypto.so.41.0.1
+7f0136a0e000-7f0136a2b000 r--p 0017f000 fe:00 30418506                   /lib/libcrypto.so.41.0.1
+7f0136a2b000-7f0136a31000 rw-p 0019c000 fe:00 30418506                   /lib/libcrypto.so.41.0.1
+7f0136a31000-7f0136a35000 rw-p 00000000 00:00 0 
+7f0136a35000-7f0136c79000 r-xp 00000000 fe:00 30418508                   /lib/libssl.so.43.0.2
+7f0136c79000-7f0136c7c000 r--p 00044000 fe:00 30418508                   /lib/libssl.so.43.0.2
+7f0136c7c000-7f0136c80000 rw-p 00047000 fe:00 30418508                   /lib/libssl.so.43.0.2
+7f0136c80000-7f0136ea6000 r-xp 00000000 fe:00 11549627                   /usr/lib/libssh2.so.1.0.1
+7f0136ea6000-7f0136ea7000 r--p 00026000 fe:00 11549627                   /usr/lib/libssh2.so.1.0.1
+7f0136ea7000-7f0136ea8000 rw-p 00027000 fe:00 11549627                   /usr/lib/libssh2.so.1.0.1
+7f0136ea8000-7f01392f0000 r-xp 00000000 fe:00 19929156                   /usr/local/lib/libmesos-1.3.0.so
+7f01392f0000-7f01393aa000 r--p 02248000 fe:00 19929156                   /usr/local/lib/libmesos-1.3.0.so
+7f01393aa000-7f01393ab000 rw-p 02302000 fe:00 19929156                   /usr/local/lib/libmesos-1.3.0.so
+7f01393ab000-7f01393c7000 rw-p 00000000 00:00 0 
+7f01393cb000-7f01395cb000 rw-p 00000000 00:00 0 
+7f01395cb000-7f0139891000 r-xp 00000000 fe:00 11549625                   /usr/lib/libsqlite3.so.0.8.6
+7f0139891000-7f0139894000 r--p 000c6000 fe:00 11549625                   /usr/lib/libsqlite3.so.0.8.6
+7f0139894000-7f0139896000 rw-p 000c9000 fe:00 11549625                   /usr/lib/libsqlite3.so.0.8.6
+7f0139896000-7f0139897000 rw-p 00000000 00:00 0 
+7f0139897000-7f0139ab4000 r-xp 00000000 fe:00 11549603                   /usr/lib/libexpat.so.1.6.2
+7f0139ab4000-7f0139ab6000 r--p 0001d000 fe:00 11549603                   /usr/lib/libexpat.so.1.6.2
+7f0139ab6000-7f0139ab7000 rw-p 0001f000 fe:00 11549603                   /usr/lib/libexpat.so.1.6.2
+7f0139ab7000-7f0139cd8000 r-xp 00000000 fe:00 11549596                   /usr/lib/libaprutil-1.so.0.5.4
+7f0139cd8000-7f0139cd9000 r--p 00021000 fe:00 11549596                   /usr/lib/libaprutil-1.so.0.5.4
+7f0139cd9000-7f0139cdb000 rw-p 00022000 fe:00 11549596                   /usr/lib/libaprutil-1.so.0.5.4
+7f0139cdb000-7f0139edd000 r-xp 00000000 fe:00 11549607                   /usr/lib/libfts.so.0.0.0
+7f0139edd000-7f0139ede000 r--p 00002000 fe:00 11549607                   /usr/lib/libfts.so.0.0.0
+7f0139ede000-7f0139edf000 rw-p 00003000 fe:00 11549607                   /usr/lib/libfts.so.0.0.0
+7f0139edf000-7f013a109000 r-xp 00000000 fe:00 11549594                   /usr/lib/libapr-1.so.0.5.2
+7f013a109000-7f013a10a000 r--p 0002a000 fe:00 11549594                   /usr/lib/libapr-1.so.0.5.2
+7f013a10a000-7f013a10b000 rw-p 0002b000 fe:00 11549594                   /usr/lib/libapr-1.so.0.5.2
+7f013a10b000-7f013a368000 r-xp 00000000 fe:00 11549600                   /usr/lib/libcurl.so.4.4.0
+7f013a368000-7f013a36b000 r--p 0005d000 fe:00 11549600                   /usr/lib/libcurl.so.4.4.0
+7f013a36b000-7f013a36c000 rw-p 00060000 fe:00 11549600                   /usr/lib/libcurl.so.4.4.0
+7f013a36c000-7f013a583000 r-xp 00000000 fe:00 11549621                   /usr/lib/libsasl2.so.3.0.0
+7f013a583000-7f013a584000 r--p 00017000 fe:00 11549621                   /usr/lib/libsasl2.so.3.0.0
+7f013a584000-7f013a585000 rw-p 00018000 fe:00 11549621                   /usr/lib/libsasl2.so.3.0.0
+7f013a585000-7f013a84c000 r-xp 00000000 fe:00 11549658                   /usr/lib/libsvn_subr-1.so.0.0.0
+7f013a84c000-7f013a89d000 r--p 000c7000 fe:00 11549658                   /usr/lib/libsvn_subr-1.so.0.0.0
+7f013a89d000-7f013a89e000 rw-p 00118000 fe:00 11549658                   /usr/lib/libsvn_subr-1.so.0.0.0
+7f013a89e000-7f013aaad000 r-xp 00000000 fe:00 11549634                   /usr/lib/libsvn_delta-1.so.0.0.0
+7f013aaad000-7f013aaae000 r--p 0000f000 fe:00 11549634                   /usr/lib/libsvn_delta-1.so.0.0.0
+7f013aaae000-7f013aaaf000 rw-p 00010000 fe:00 11549634                   /usr/lib/libsvn_delta-1.so.0.0.0
+7f013aaaf000-7f013aab2000 ---p 00000000 00:00 0 
+7f013aab2000-7f013abb0000 rw-p 00000000 00:00 0 
+7f013abb0000-7f013abb3000 ---p 00000000 00:00 0 
+7f013abb3000-7f013acb1000 rw-p 00000000 00:00 0 
+7f013acb1000-7f013acb4000 ---p 00000000 00:00 0 
+7f013acb4000-7f013adb2000 rw-p 00000000 00:00 0 
+7f013adb2000-7f013adb5000 ---p 00000000 00:00 0 
+7f013adb5000-7f013aeb3000 rw-p 00000000 00:00 0 
+7f013aeb3000-7f013aeb6000 ---p 00000000 00:00 0 
+7f013aeb6000-7f013afb4000 rw-p 00000000 00:00 0 
+7f013afb4000-7f013afb7000 ---p 00000000 00:00 0 
+7f013afb7000-7f013b0b5000 rw-p 00000000 00:00 0 
+7f013b0b5000-7f013b0b8000 ---p 00000000 00:00 0 
+7f013b0b8000-7f013b1b6000 rw-p 00000000 00:00 0 
+7f013b1b6000-7f013b1b9000 ---p 00000000 00:00 0 
+7f013b1b9000-7f013b4b7000 rw-p 00000000 00:00 0 
+7f013b4b7000-7f013b4ba000 ---p 00000000 00:00 0 
+7f013b4ba000-7f013b5b8000 rw-p 00000000 00:00 0 
+7f013b5b8000-7f013b5bb000 ---p 00000000 00:00 0 
+7f013b5bb000-7f013b6b9000 rw-p 00000000 00:00 0 
+7f013b6b9000-7f013b8ca000 r-xp 00000000 fe:00 21239908                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libnio.so
+7f013b8ca000-7f013b8cb000 r--p 00011000 fe:00 21239908                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libnio.so
+7f013b8cb000-7f013b8cc000 rw-p 00012000 fe:00 21239908                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libnio.so
+7f013b8cc000-7f013bacc000 rw-p 00000000 00:00 0 
+7f013bb7a000-7f013bca8000 r-xp 00000000 fe:00 16674126                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/native/libsigar-amd64-linux.so
+7f013bca8000-7f013bcae000 rw-p 0002e000 fe:00 16674126                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/native/libsigar-amd64-linux.so
+7f013bcae000-7f013bcb1000 rw-p 00000000 00:00 0 
+7f013bcb1000-7f013bcb4000 ---p 00000000 00:00 0 
+7f013bcb4000-7f013bdb2000 rw-p 00000000 00:00 0 
+7f013bdc4000-7f013bdc7000 ---p 00000000 00:00 0 
+7f013bdc7000-7f013c0c5000 rw-p 00000000 00:00 0 
+7f013c0c5000-7f013c2c5000 rw-p 00000000 00:00 0 
+7f013c2cb000-7f013c2ce000 ---p 00000000 00:00 0 
+7f013c2ce000-7f013c3cc000 rw-p 00000000 00:00 0 
+7f013c47a000-7f013c683000 r-xp 00000000 fe:00 21239902                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libinstrument.so
+7f013c683000-7f013c684000 r--p 00009000 fe:00 21239902                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libinstrument.so
+7f013c684000-7f013c685000 rw-p 0000a000 fe:00 21239902                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libinstrument.so
+7f013c6bc000-7f013c6bf000 ---p 00000000 00:00 0 
+7f013c6bf000-7f013c9bd000 rw-p 00000000 00:00 0 
+7f013ca00000-7f013ca03000 ---p 00000000 00:00 0 
+7f013ca03000-7f013cb01000 rw-p 00000000 00:00 0 
+7f013cb01000-7f013cb04000 ---p 00000000 00:00 0 
+7f013cb04000-7f013cc02000 rw-p 00000000 00:00 0 
+7f013cc02000-7f013ce04000 r-xp 00000000 fe:00 21239925                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libattach.so
+7f013ce04000-7f013ce05000 r--p 00002000 fe:00 21239925                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libattach.so
+7f013ce05000-7f013ce06000 rw-p 00003000 fe:00 21239925                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libattach.so
+7f013ce3d000-7f013ce99000 rw-p 00000000 00:00 0 
+7f013ce99000-7f013ce9c000 ---p 00000000 00:00 0 
+7f013ce9c000-7f013cf9a000 rw-p 00000000 00:00 0 
+7f013cfdb000-7f013d1e3000 r-xp 00000000 fe:00 21239901                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libmanagement.so
+7f013d1e3000-7f013d1e4000 r--p 00008000 fe:00 21239901                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libmanagement.so
+7f013d1e4000-7f013d1e5000 rw-p 00009000 fe:00 21239901                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libmanagement.so
+7f013d1e5000-7f013d25e000 r--s 007bd000 fe:00 21239998                   /usr/lib/jvm/java-1.8-openjdk/lib/tools.jar
+7f013d29f000-7f013d2e0000 rw-p 00000000 00:00 0 
+7f013d2e0000-7f013d2e3000 ---p 00000000 00:00 0 
+7f013d2e3000-7f013d5e1000 rw-p 00000000 00:00 0 
+7f013d605000-7f013d60b000 r--s 001c6000 fe:00 21239749                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/charsets.jar
+7f013d60b000-7f013d60e000 r--s 00018000 fe:00 21239748                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/jce.jar
+7f013d60e000-7f013d621000 r--s 00102000 fe:00 21239746                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/resources.jar
+7f013d621000-7f013d622000 r--s 00000000 fe:00 21240038                   /tmp/agent6724908603980335794.jar
+7f013d622000-7f0140623000 rw-p 00000000 00:00 0 
+7f0140623000-7f0140839000 r-xp 00000000 fe:00 21239917                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libnet.so
+7f0140839000-7f014083a000 r--p 00016000 fe:00 21239917                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libnet.so
+7f014083a000-7f014083b000 rw-p 00017000 fe:00 21239917                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libnet.so
+7f014083b000-7f0140a7c000 rw-p 00000000 00:00 0 
+7f0140a7c000-7f0140c7c000 rw-p 00000000 00:00 0 
+7f0140c7c000-7f0140c80000 r--s 00055000 fe:00 21239744                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/jsse.jar
+7f0140c80000-7f0140e80000 rw-p 00000000 00:00 0 
+7f0140e80000-7f0141080000 rw-p 00000000 00:00 0 
+7f0141080000-7f0141280000 rw-p 00000000 00:00 0 
+7f0141280000-7f0141480000 rw-p 00000000 00:00 0 
+7f0141480000-7f0141483000 ---p 00000000 00:00 0 
+7f0141483000-7f0141581000 rw-p 00000000 00:00 0 
+7f0141581000-7f0141587000 r--s 00038000 fe:00 16673990                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.lightbend.akka.akka-stream-alpakka-s3_2.11-0.8.jar
+7f0141587000-7f0141589000 r--s 00006000 fe:00 16673991                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-autoweave_2.11-0.6.5.jar
+7f0141589000-7f014158b000 r--s 0001a000 fe:00 16673992                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-servlet-9.3.6.v20151106.jar
+7f014158b000-7f014158d000 r--s 0000e000 fe:00 16673993                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.classmate-1.1.0.jar
+7f014158d000-7f0141590000 r--s 00019000 fe:00 16673994                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-jmx_2.11-0.6.5.jar
+7f0141590000-7f0141591000 r--s 00003000 fe:00 16673995                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-continuation-9.3.6.v20151106.jar
+7f0141591000-7f0141592000 r--s 00004000 fe:00 16673996                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-jetty9-3.1.2.jar
+7f0141592000-7f0141594000 r--s 00006000 fe:00 16673997                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.jaxrs.jackson-jaxrs-base-2.7.2.jar
+7f0141594000-7f01415e0000 r--s 00418000 fe:00 16673998                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-lang.scala-reflect-2.11.11.jar
+7f01415e0000-7f01415e1000 r--s 00002000 fe:00 16673999                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-http-xml_2.11-10.0.5.jar
+7f01415e1000-7f01415e3000 r--s 00007000 fe:00 16674000                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.module.jackson-module-jaxb-annotations-2.7.2.jar
+7f01415e3000-7f01415e5000 r--s 0000b000 fe:00 16674001                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.sun.jersey.contribs.jersey-multipart-1.18.6.jar
+7f01415e5000-7f01415e8000 r--s 00014000 fe:00 16674002                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-security-9.3.6.v20151106.jar
+7f01415e8000-7f01415ec000 r--s 00021000 fe:00 16674003                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-system-metrics_2.11-0.6.5.jar
+7f01415ec000-7f01415ee000 r--s 00013000 fe:00 16674004                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-servlets-9.3.6.v20151106.jar
+7f01415ee000-7f01415f0000 r--s 0000f000 fe:00 16674005                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.jboss.logging.jboss-logging-3.2.1.Final.jar
+7f01415f0000-7f01415fb000 r--s 0006b000 fe:00 16674006                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.sun.jersey.jersey-core-1.18.6.jar
+7f01415fb000-7f01415fd000 r--s 0000e000 fe:00 16674007                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.jvnet.mimepull.mimepull-1.9.3.jar
+7f01415fd000-7f01415fe000 r--s 00001000 fe:00 16674008                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.play.play-datacommons_2.11-2.5.14.jar
+7f01415fe000-7f01415ff000 r--s 00002000 fe:00 16674009                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.github.fge.btf-1.2.jar
+7f01415ff000-7f014164c000 r--s 003ef000 fe:00 16674010                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-stream_2.11-2.4.18.jar
+7f014164c000-7f014164d000 r--s 00004000 fe:00 16674011                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scalamacros.resetallattrs_2.11-1.0.0.jar
+7f014164d000-7f0141658000 r--s 00061000 fe:00 16674012                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/net.liftweb.lift-markdown_2.11-2.6.2.jar
+7f0141658000-7f0141662000 r--s 0009a000 fe:00 16674013                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-lang.modules.scala-xml_2.11-1.0.5.jar
+7f0141662000-7f0141664000 r--s 00009000 fe:00 16674014                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.module.jackson-module-paranamer-2.7.2.jar
+7f0141664000-7f014166e000 r--s 00073000 fe:00 16674015                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.reactivex.rxscala_2.11-0.26.5.jar
+7f014166e000-7f014166f000 r--s 00002000 fe:00 16674016                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.getsentry.raven.raven-logback-7.8.6.jar
+7f014166f000-7f0141672000 r--s 00042000 fe:00 16674017                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.core.jackson-core-2.8.7.jar
+7f0141672000-7f0141674000 r--s 00014000 fe:00 16674018                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/jline.jline-0.9.94.jar
+7f0141674000-7f014167b000 r--s 0006f000 fe:00 16674019                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-server-9.3.6.v20151106.jar
+7f014167b000-7f014167e000 r--s 00354000 fe:00 16674020                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/mesosphere.marathon.api-console-3.0.8-accept.jar
+7f014167e000-7f0141680000 r--s 0001a000 fe:00 16674021                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.hdrhistogram.HdrHistogram-2.1.9.jar
+7f0141680000-7f0141690000 r--s 0003a000 fe:00 16674022                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.googlecode.libphonenumber.libphonenumber-6.2.jar
+7f0141690000-7f0141692000 r--s 00008000 fe:00 16674023                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.github.fge.msg-simple-1.1.jar
+7f0141692000-7f0141695000 r--s 0001a000 fe:00 16674024                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-http-9.3.6.v20151106.jar
+7f0141695000-7f01416d1000 r--s 00326000 fe:00 16674025                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-http-core_2.11-10.0.6.jar
+7f01416d1000-7f01416d2000 r--s 00008000 fe:00 16674026                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.scala-logging.scala-logging_2.11-3.5.0.jar
+7f01416d2000-7f01416d7000 r--s 00040000 fe:00 16674027                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.config-1.3.1.jar
+7f01416d7000-7f01416df000 r--s 0004c000 fe:00 16674028                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.javabits.jgrapht.jgrapht-core-0.9.3.jar
+7f01416df000-7f01416ea000 r--s 0007b000 fe:00 16674029                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-lang.modules.scala-async_2.11-0.9.6.jar
+7f01416ea000-7f01416fb000 r--s 00116000 fe:00 16674030                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.core.jackson-databind-2.7.8.jar
+7f01416fb000-7f014170c000 r--s 00099000 fe:00 16674031                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.hibernate.hibernate-validator-5.2.1.Final.jar
+7f014170c000-7f0141713000 r--s 00266000 fe:00 16674032                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.sigar-loader-1.6.5-rev002.jar
+7f0141713000-7f014171c000 r--s 0005c000 fe:00 16674033                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.play.play-functional_2.11-2.5.14.jar
+7f014171c000-7f0141723000 r--s 0003a000 fe:00 16674034                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/commons-codec.commons-codec-1.9.jar
+7f0141723000-7f0141725000 r--s 00000000 fe:00 16674035                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.slf4j.jul-to-slf4j-1.7.21.jar
+7f0141725000-7f0141727000 r--s 00008000 fe:00 16674036                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-jvm-3.1.2.jar
+7f0141727000-7f014172b000 r--s 00018000 fe:00 16674037                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-core-3.1.2.jar
+7f014172b000-7f0141738000 r--s 00083000 fe:00 16674038                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/commons-collections.commons-collections-3.2.2.jar
+7f0141738000-7f014173b000 r--s 00010000 fe:00 16674039                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/de.heikoseeberger.akka-sse_2.11-2.0.0.jar
+7f014173b000-7f014173e000 r--s 00015000 fe:00 16674040                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/javax.servlet.javax.servlet-api-3.1.0.jar
+7f014173e000-7f014176c000 r--s 00489000 fe:00 16674041                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.mesos.mesos-1.3.0-rc3.jar
+7f014176c000-7f014176e000 r--s 00008000 fe:00 16674042                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.uuid.java-uuid-generator-3.1.4.jar
+7f014176e000-7f014176f000 r--s 00002000 fe:00 16674043                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-scala_2.11-0.6.5.jar
+7f014176f000-7f0141773000 r--s 0001c000 fe:00 16674044                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.sun.jersey.jersey-servlet-1.18.6.jar
+7f0141773000-7f0141775000 r--s 0000e000 fe:00 16674045                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.google.inject.extensions.guice-servlet-3.0.jar
+7f0141775000-7f014178e000 r--s 000fe000 fe:00 16674046                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.reactivex.rxjava-1.2.4.jar
+7f014178e000-7f014179b000 r--s 0009f000 fe:00 16674047                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-core_2.11-0.6.5.jar
+7f014179b000-7f01417c7000 r--s 00208000 fe:00 16674048                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.google.guava.guava-19.0.jar
+7f01417c7000-7f01417c8000 r--s 00000000 fe:00 16674049                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.reactivestreams.reactive-streams-1.0.0.jar
+7f01417c8000-7f01417cf000 r--s 0005f000 fe:00 16674050                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-util-9.3.6.v20151106.jar
+7f01417cf000-7f01417da000 r--s 00069000 fe:00 16674051                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/ch.qos.logback.logback-core-1.2.1.jar
+7f01417da000-7f01417dc000 r--s 00001000 fe:00 16674052                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-jersey-3.1.2.jar
+7f01417dc000-7f01417dd000 r--s 00003000 fe:00 16674053                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/de.heikoseeberger.akka-http-play-json_2.11-1.10.1.jar
+7f01417dd000-7f01417e1000 r--s 0000c000 fe:00 16674054                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/javax.validation.validation-api-1.1.0.Final.jar
+7f01417e1000-7f01417e2000 r--s 00003000 fe:00 16674055                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.sun.jersey.contribs.jersey-guice-1.18.1.jar
+7f01417e2000-7f01417fa000 r--s 001bf000 fe:00 16674056                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.aspectj.aspectjweaver-1.8.10.jar
+7f01417fa000-7f01417fc000 r--s 00004000 fe:00 16674057                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.slf4j.log4j-over-slf4j-1.7.21.jar
+7f01417fc000-7f0141802000 r--s 0002c000 fe:00 16674058                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.curator.curator-framework-2.11.1.jar
+7f0141802000-7f0141803000 r--s 00002000 fe:00 16674059                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-healthchecks-3.1.2.jar
+7f0141803000-7f0141804000 r--s 00007000 fe:00 16674060                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.github.fge.jackson-coreutils-1.8.jar
+7f0141804000-7f0141806000 r--s 0000c000 fe:00 16674061                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-statsd_2.11-0.6.5.jar
+7f0141806000-7f014180a000 r--s 00018000 fe:00 16674062                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.joda.joda-convert-1.8.1.jar
+7f014180a000-7f0141811000 r--s 00049000 fe:00 16674063                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.httpcomponents.httpcore-4.4.4.jar
+7f0141811000-7f0141814000 r--s 00006000 fe:00 16674064                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.google.code.findbugs.jsr305-3.0.0.jar
+7f0141814000-7f0141817000 r--s 00013000 fe:00 16674065                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.datatype.jackson-datatype-jsr310-2.7.8.jar
+7f0141817000-7f0141824000 r--s 0008d000 fe:00 16674066                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.rogach.scallop_2.11-1.0.0.jar
+7f0141824000-7f0141829000 r--s 00039000 fe:00 16674067                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/javax.mail.mailapi-1.4.3.jar
+7f0141829000-7f014186a000 r--s 00267000 fe:00 16674068                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-http_2.11-10.0.6.jar
+7f014186a000-7f0141877000 r--s 000a7000 fe:00 16674069                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.httpcomponents.httpclient-4.5.2.jar
+7f0141877000-7f014188c000 r--s 000ba000 fe:00 16674070                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.amazonaws.aws-java-sdk-core-1.11.128.jar
+7f014188c000-7f014188d000 r--s 00004000 fe:00 16674071                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-slf4j_2.11-2.4.18.jar
+7f014188d000-7f01418a0000 r--s 000ad000 fe:00 16674072                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.play.play-iteratees_2.11-2.5.14.jar
+7f01418a0000-7f01418aa000 r--s 00081000 fe:00 16674073                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/software.amazon.ion.ion-java-1.0.2.jar
+7f01418aa000-7f01418ad000 r--s 00129000 fe:00 16674074                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/mesosphere.marathon.ui-1.2.0.jar
+7f01418ad000-7f01418c5000 r--s 00110000 fe:00 16674075                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.netty.netty-3.7.0.Final.jar
+7f01418c5000-7f01418c8000 r--s 00017000 fe:00 16674076                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.eclipse.jetty.jetty-io-9.3.6.v20151106.jar
+7f01418c8000-7f01418d0000 r--s 0008a000 fe:00 16674077                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.google.protobuf.protobuf-java-2.6.1.jar
+7f01418d0000-7f01418d3000 r--s 00017000 fe:00 16674078                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.github.spullara.mustache.java.compiler-0.9.0.jar
+7f01418d3000-7f01418d6000 r--s 00015000 fe:00 16674079                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/mesosphere.chaos_2.11-0.8.8.jar
+7f01418d6000-7f01418dc000 r--s 00046000 fe:00 16674080                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/ch.qos.logback.logback-classic-1.2.1.jar
+7f01418dc000-7f01418de000 r--s 00003000 fe:00 16674081                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.slf4j.jcl-over-slf4j-1.7.21.jar
+7f01418de000-7f01418e5000 r--s 0003c000 fe:00 16674082                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.wix.accord-core_2.11-0.5.jar
+7f01418e5000-7f01418ea000 r--s 00025000 fe:00 16674083                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.github.fge.json-schema-core-1.2.5.jar
+7f01418ea000-7f0141943000 r--s 00523000 fe:00 16674084                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-lang.scala-library-2.11.11.jar
+7f0141943000-7f0141945000 r--s 0000e000 fe:00 16674085                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/javax.activation.activation-1.1.jar
+7f0141945000-7f014194d000 r--s 00052000 fe:00 16674086                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.ssl-config-core_2.11-0.2.1.jar
+7f014194d000-7f0141959000 r--s 000b9000 fe:00 16674087                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.zookeeper.zookeeper-3.4.8.jar
+7f0141959000-7f014195b000 r--s 00003000 fe:00 16674088                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-servlets-3.1.2.jar
+7f014195b000-7f014195d000 r--s 00009000 fe:00 16674089                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.wix.accord-api_2.11-0.5.jar
+7f014195d000-7f0141962000 r--s 00038000 fe:00 16674090                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/commons-beanutils.commons-beanutils-1.9.3.jar
+7f0141962000-7f0141969000 r--s 0003e000 fe:00 16674091                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.curator.curator-recipes-2.11.1.jar
+7f0141969000-7f0141972000 r--s 00091000 fe:00 16674092                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-stm.scala-stm_2.11-0.7.jar
+7f0141972000-7f0141975000 r--s 0000c000 fe:00 16674093                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.github.fge.uri-template-0.9.jar
+7f0141975000-7f0141982000 r--s 000e5000 fe:00 16674094                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-parsing_2.11-10.0.6.jar
+7f0141982000-7f014198b000 r--s 0006a000 fe:00 16674095                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.commons.commons-compress-1.13.jar
+7f014198b000-7f014199d000 r--s 000be000 fe:00 16674096                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.sksamuel.scapegoat.scalac-scapegoat-plugin_2.11-1.3.0.jar
+7f014199d000-7f01419a1000 r--s 00019000 fe:00 16674097                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.aspectj.aspectjrt-1.8.10.jar
+7f01419a1000-7f01419a7000 r--s 00033000 fe:00 16674098                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.github.fge.json-schema-validator-2.2.6.jar
+7f01419a7000-7f01419a8000 r--s 00000000 fe:00 16674099                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/javax.inject.javax.inject-1.jar
+7f01419a8000-7f01419a9000 r--s 00003000 fe:00 16674100                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-json-3.1.2.jar
+7f01419a9000-7f01419b6000 r--s 00092000 fe:00 16674101                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.play.play-json_2.11-2.5.14.jar
+7f01419b6000-7f01419b8000 r--s 0000e000 fe:00 16674102                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/net.sf.jopt-simple.jopt-simple-4.6.jar
+7f01419b8000-7f01419ba000 r--s 00000000 fe:00 16674103                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/aopalliance.aopalliance-1.0.jar
+7f01419ba000-7f01419c5000 r--s 0005d000 fe:00 16674104                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-lang.modules.scala-parser-combinators_2.11-1.0.4.jar
+7f01419c5000-7f01419c6000 r--s 00001000 fe:00 16674105                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-annotation-3.1.2.jar
+7f01419c6000-7f01419c7000 r--s 0000b000 fe:00 16674106                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.6.6.jar
+7f01419c7000-7f01419d7000 r--s 0009c000 fe:00 16674109                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.sun.jersey.jersey-server-1.18.6.jar
+7f01419d7000-7f0141a07000 r--s 00306000 fe:00 16674110                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-actor_2.11-2.4.18.jar
+7f0141a07000-7f0141a18000 r--s 0008a000 fe:00 16674111                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/joda-time.joda-time-2.9.9.jar
+7f0141a18000-7f0141a2f000 r--s 00112000 fe:00 16674113                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-lang.modules.scala-java8-compat_2.11-0.8.0.jar
+7f0141a2f000-7f0141b1f000 r--s 00b20000 fe:00 16674124                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/mesosphere.marathon.marathon-1.5.0-SNAPSHOT-656-gf6c709c.jar
+7f0141b1f000-7f0141b20000 ---p 00000000 00:00 0 
+7f0141b20000-7f0141c21000 rw-p 00000000 00:00 0 
+7f0141c21000-7f0141c24000 ---p 00000000 00:00 0 
+7f0141c24000-7f0141d22000 rw-p 00000000 00:00 0 
+7f0141d22000-7f0141d23000 ---p 00000000 00:00 0 
+7f0141d23000-7f0141d26000 ---p 00000000 00:00 0 
+7f0141d26000-7f0141e24000 rw-p 00000000 00:00 0 
+7f0141e24000-7f0141e25000 ---p 00000000 00:00 0 
+7f0141e25000-7f0141e28000 ---p 00000000 00:00 0 
+7f0141e28000-7f0141f26000 rw-p 00000000 00:00 0 
+7f0141f26000-7f0141f27000 ---p 00000000 00:00 0 
+7f0141f27000-7f0141f2a000 ---p 00000000 00:00 0 
+7f0141f2a000-7f0142028000 rw-p 00000000 00:00 0 
+7f0142028000-7f014202b000 ---p 00000000 00:00 0 
+7f014202b000-7f0142129000 rw-p 00000000 00:00 0 
+7f0142129000-7f014212c000 ---p 00000000 00:00 0 
+7f014212c000-7f014222a000 rw-p 00000000 00:00 0 
+7f014222a000-7f014222d000 ---p 00000000 00:00 0 
+7f014222d000-7f014232b000 rw-p 00000000 00:00 0 
+7f014232b000-7f014232c000 ---p 00000000 00:00 0 
+7f014232c000-7f0143389000 rw-p 00000000 00:00 0 
+7f0143389000-7f0143557000 r--s 01f3c000 fe:00 21239745                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/rt.jar
+7f0143557000-7f014c215000 rw-p 00000000 00:00 0 
+7f014c215000-7f014c216000 ---p 00000000 00:00 0 
+7f014c216000-7f014c317000 rw-p 00000000 00:00 0 
+7f014c317000-7f014c318000 ---p 00000000 00:00 0 
+7f014c318000-7f014c419000 rw-p 00000000 00:00 0 
+7f014c419000-7f014c41a000 ---p 00000000 00:00 0 
+7f014c41a000-7f014c51b000 rw-p 00000000 00:00 0 
+7f014c51b000-7f014c51c000 ---p 00000000 00:00 0 
+7f014c51c000-7f014c66f000 rw-p 00000000 00:00 0 
+7f014c66f000-7f014cb4d000 ---p 00000000 00:00 0 
+7f014cb4d000-7f014cb9f000 rw-p 00000000 00:00 0 
+7f014cb9f000-7f014d07d000 ---p 00000000 00:00 0 
+7f014d07d000-7f014d0f5000 rw-p 00000000 00:00 0 
+7f014d0f5000-7f014d315000 ---p 00000000 00:00 0 
+7f014d315000-7f014d34b000 rw-p 00000000 00:00 0 
+7f014d34b000-7f014d6d6000 ---p 00000000 00:00 0 
+7f014d6d6000-7f014e416000 rwxp 00000000 00:00 0 
+7f014e416000-7f015c6d6000 ---p 00000000 00:00 0 
+7f015c6d6000-7f015c8dd000 r-xp 00000000 fe:00 21239919                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libzip.so
+7f015c8dd000-7f015c8de000 r--p 00007000 fe:00 21239919                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libzip.so
+7f015c8de000-7f015c8df000 rw-p 00008000 fe:00 21239919                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libzip.so
+7f015c8df000-7f015cb0b000 r-xp 00000000 fe:00 21239924                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so
+7f015cb0b000-7f015cb0c000 r--p 0002c000 fe:00 21239924                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so
+7f015cb0c000-7f015cb0d000 rw-p 0002d000 fe:00 21239924                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libjava.so
+7f015cb0d000-7f015cb0e000 rw-p 00000000 00:00 0 
+7f015cb0e000-7f015cd1a000 r-xp 00000000 fe:00 21239928                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libverify.so
+7f015cd1a000-7f015cd1c000 r--p 0000c000 fe:00 21239928                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libverify.so
+7f015cd1c000-7f015cd1d000 rw-p 0000e000 fe:00 21239928                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/libverify.so
+7f015cd1d000-7f015cf2d000 r-xp 00000000 fe:00 11549608                   /usr/lib/libgcc_s.so.1
+7f015cf2d000-7f015cf2e000 r--p 00010000 fe:00 11549608                   /usr/lib/libgcc_s.so.1
+7f015cf2e000-7f015cf2f000 rw-p 00011000 fe:00 11549608                   /usr/lib/libgcc_s.so.1
+7f015cf2f000-7f015d26f000 r-xp 00000000 fe:00 11549630                   /usr/lib/libstdc++.so.6.0.22
+7f015d26f000-7f015d27d000 r--p 00140000 fe:00 11549630                   /usr/lib/libstdc++.so.6.0.22
+7f015d27d000-7f015d27e000 rw-p 0014e000 fe:00 11549630                   /usr/lib/libstdc++.so.6.0.22
+7f015d27e000-7f015d281000 rw-p 00000000 00:00 0 
+7f015d281000-7f015dc98000 r-xp 00000000 fe:00 21239915                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so
+7f015dc98000-7f015dd2d000 r--p 00817000 fe:00 21239915                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so
+7f015dd2d000-7f015dd55000 rw-p 008ac000 fe:00 21239915                   /usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server/libjvm.so
+7f015dd55000-7f015dd85000 rw-p 00000000 00:00 0 
+7f015dd85000-7f015df9a000 r-xp 00000000 fe:00 30418510                   /lib/libz.so.1.2.11
+7f015df9a000-7f015df9b000 r--p 00015000 fe:00 30418510                   /lib/libz.so.1.2.11
+7f015df9b000-7f015df9c000 rw-p 00016000 fe:00 30418510                   /lib/libz.so.1.2.11
+7f015df9c000-7f015e1a8000 r-xp 00000000 fe:00 21239880                   /usr/lib/jvm/java-1.8-openjdk/lib/amd64/jli/libjli.so
+7f015e1a8000-7f015e1a9000 r--p 0000c000 fe:00 21239880                   /usr/lib/jvm/java-1.8-openjdk/lib/amd64/jli/libjli.so
+7f015e1a9000-7f015e1aa000 rw-p 0000d000 fe:00 21239880                   /usr/lib/jvm/java-1.8-openjdk/lib/amd64/jli/libjli.so
+7f015e1aa000-7f015e233000 r-xp 00000000 fe:00 30418503                   /lib/ld-musl-x86_64.so.1
+7f015e233000-7f015e234000 r--s 00007000 fe:00 16674107                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-datadog_2.11-0.6.5.jar
+7f015e234000-7f015e236000 r--s 00005000 fe:00 16674108                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.7.8.jar
+7f015e236000-7f015e238000 r--s 00003000 fe:00 16674112                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider-2.7.2.jar
+7f015e238000-7f015e23c000 r--s 0001e000 fe:00 16674114                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.getsentry.raven.raven-7.8.6.jar
+7f015e23c000-7f015e24b000 r--s 0009f000 fe:00 16674115                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.google.inject.guice-3.0.jar
+7f015e24b000-7f015e24e000 r--s 0000a000 fe:00 16674116                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.core.jackson-annotations-2.7.8.jar
+7f015e24e000-7f015e25b000 r--s 00070000 fe:00 16674117                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.module.jackson-module-scala_2.11-2.7.2.jar
+7f015e25b000-7f015e268000 r--s 00126000 fe:00 16674118                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.mozilla.rhino-1.7.7.jar
+7f015e268000-7f015e272000 r--s 00066000 fe:00 16674119                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/net.logstash.logback.logstash-logback-encoder-4.9.jar
+7f015e272000-7f015e274000 r--s 00009000 fe:00 16674120                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.slf4j.slf4j-api-1.7.24.jar
+7f015e274000-7f015e276000 r--s 00007000 fe:00 16674121                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.thoughtworks.paranamer.paranamer-2.8.jar
+7f015e276000-7f015e279000 r--s 00010000 fe:00 16674122                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.curator.curator-client-2.11.1.jar
+7f015e279000-7f015e27c000 r--s 00011000 fe:00 16674123                   /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/mesosphere.marathon.plugin-interface-1.5.0-SNAPSHOT-656-gf6c709c.jar
+7f015e27c000-7f015e27d000 r--s 00000000 fe:00 30418453                   /etc/localtime
+7f015e27d000-7f015e326000 rw-p 00000000 00:00 0 
+7f015e326000-7f015e32e000 rw-s 00000000 fe:00 21240024                   /tmp/hsperfdata_root/456
+7f015e32e000-7f015e32f000 rw-p 00000000 00:00 0 
+7f015e32f000-7f015e330000 r--p 00000000 00:00 0 
+7f015e330000-7f015e331000 ---p 00000000 00:00 0 
+7f015e331000-7f015e334000 ---p 00000000 00:00 0 
+7f015e334000-7f015e432000 rw-p 00000000 00:00 0 
+7f015e432000-7f015e433000 r--p 00088000 fe:00 30418503                   /lib/ld-musl-x86_64.so.1
+7f015e433000-7f015e434000 rw-p 00089000 fe:00 30418503                   /lib/ld-musl-x86_64.so.1
+7f015e434000-7f015e437000 rw-p 00000000 00:00 0 
+7ffc2c85c000-7ffc2c880000 rw-p 00000000 00:00 0                          [stack]
+7ffc2c8be000-7ffc2c8c0000 r--p 00000000 00:00 0                          [vvar]
+7ffc2c8c0000-7ffc2c8c2000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+java_command: mesosphere.marathon.Main --master=localhost:5050
+java_class_path (initial): /target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/mesosphere.marathon.marathon-1.5.0-SNAPSHOT-656-gf6c709c.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/mesosphere.marathon.plugin-interface-1.5.0-SNAPSHOT-656-gf6c709c.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.apache.curator.curator-client-2.11.1.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.thoughtworks.paranamer.paranamer-2.8.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.slf4j.slf4j-api-1.7.24.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/net.logstash.logback.logstash-logback-encoder-4.9.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.mozilla.rhino-1.7.7.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.module.jackson-module-scala_2.11-2.7.2.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.core.jackson-annotations-2.7.8.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.google.inject.guice-3.0.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.getsentry.raven.raven-7.8.6.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/org.scala-lang.modules.scala-java8-compat_2.11-0.8.0.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider-2.7.2.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/joda-time.joda-time-2.9.9.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.typesafe.akka.akka-actor_2.11-2.4.18.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.sun.jersey.jersey-server-1.18.6.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.datatype.jackson-datatype-jdk8-2.7.8.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.kamon.kamon-datadog_2.11-0.6.5.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/com.fasterxml.jackson.dataformat.jackson-dataformat-cbor-2.6.6.jar:/target/marathon-1.5.0-SNAPSHOT-656-gf6c709c/lib/io.dropwizard.metrics.metrics-annotation-3.1.2.jar:/target/mar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+LD_LIBRARY_PATH=/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/amd64
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x63094c], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0x63094c], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x55ffac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x55ffac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x55ffac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x55ffac], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x56014b], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x562231], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x562231], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x562231], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x562231], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
