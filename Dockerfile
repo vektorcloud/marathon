@@ -2,15 +2,15 @@ FROM quay.io/vektorcloud/mesos:1.3.0 AS mesos
 
 FROM quay.io/vektorcloud/scala AS marathon
 
-ENV VERSION v1.4.5 \
-  MAX_HEAP 3072m
+ENV VERSION="v1.4.5" \
+  SBT_OPTS="-Xmx3072m"
 
 RUN cd /tmp \
   && apk add --no-cache git \
   && git clone https://github.com/mesosphere/marathon.git \
   && cd marathon \
   && git checkout "$VERSION" \
-  && SBT_OPTS="-Xmx$MAX_HEAP" sbt 'universal:packageBin'
+  && sbt 'universal:packageBin'
 
 # TODO: SHOULD be able to run this with our
 # glibc + openjdk image but Marathon depends
