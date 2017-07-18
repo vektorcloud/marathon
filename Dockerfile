@@ -1,4 +1,4 @@
-FROM quay.io/vektorcloud/mesos:1.3.0-jni AS mesos
+FROM quay.io/vektorcloud/mesos:1.3.0 AS mesos
 
 FROM quay.io/vektorcloud/scala AS marathon
 
