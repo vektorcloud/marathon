@@ -1,6 +1,6 @@
 # Marathon
 
-![circleci][circleci]
+[![circleci][circleci]](https://circleci.com/gh/vektorcloud/marathon)
 
 
 ### Running
